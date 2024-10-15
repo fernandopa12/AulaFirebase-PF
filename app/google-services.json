@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1030406564093",
-    "project_id": "aulafirebase-a173d",
-    "storage_bucket": "aulafirebase-a173d.appspot.com"
+    "project_number": "228976931215",
+    "project_id": "aulafirebase-96ad8",
+    "storage_bucket": "aulafirebase-96ad8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1030406564093:android:e64760f6c3159742837694",
+        "mobilesdk_app_id": "1:228976931215:android:8ef65c1e561977c6405bfa",
         "android_client_info": {
           "package_name": "com.fernando.aulafirebase"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBCsksaWrDymSiQf62x1qkcKwSInhTT-nE"
+          "current_key": "AIzaSyCEiUgvb-nOkmQGYSqM678OXJd9cKUy7H0"
         }
       ],
       "services": {
