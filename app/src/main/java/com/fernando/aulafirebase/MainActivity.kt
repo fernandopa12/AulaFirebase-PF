@@ -38,9 +38,7 @@ class MainActivity : AppCompatActivity() {
             cadastrarUsuario()
         }
 
-        binding.btnLogar.setOnClickListener{
-            logarUsuario()
-        }
+       
 
     }
 
