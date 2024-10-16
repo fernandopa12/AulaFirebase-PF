@@ -73,20 +73,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun logarUsuario(){
-        val email = "pf1963@fiap.com.br"
-        val senha = "Fernando@2024"
-
-        autenticacao.signInWithEmailAndPassword(email,senha)
-            .addOnSuccessListener { authResult->
-                startActivity(Intent(this,LogadoActivity::class.java))
-            }
-            .addOnFailureListener{exception->
-                AlertDialog.Builder(this)
-                    .setTitle("Error")
-                    .setMessage("Verificar email e senha digitados e tente novamente")
-                    .setNegativeButton("Ok"){dialog,posicao->}
-                        .create().show()
-            }
-    }
 }
