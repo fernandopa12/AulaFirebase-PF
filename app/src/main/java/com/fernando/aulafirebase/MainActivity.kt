@@ -2,6 +2,7 @@ package com.fernando.aulafirebase
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -38,6 +39,15 @@ class MainActivity : AppCompatActivity() {
             cadastrarUsuario()
         }
 
+        binding.btnLogar.setOnClickListener{
+            logarUsuario()
+        }
+
+
+        binding.textViewEqueceuSenha.setOnClickListener{
+            esqueceuSenha()
+        }
+
        
 
     }
@@ -69,6 +79,52 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun logarUsuario(){
+        try{
+            val email = binding.editEmail.text.toString()
+            val senha = binding.editSenha.text.toString()
+
+            autenticacao.signInWithEmailAndPassword(email,senha)
+                .addOnSuccessListener { authResult->
+                    verificarUsuarioLogado()
+                }
+                .addOnFailureListener{ exception->
+                    AlertDialog.Builder(this)
+                        .setTitle("Error")
+                        .setMessage("Verificar e-mail ou senha")
+                        .setPositiveButton("OK"){dialog,posicao->
+
+                        }
+                        .create().show()
+                }
+        }catch (e:Exception){
+            AlertDialog.Builder(this)
+                .setTitle("Error")
+                .setMessage("Digite email e senha e-mail ou senha")
+                .setPositiveButton("OK"){dialog,posicao->
+
+                }
+                .create().show()
+        }
+    }
+
+    private fun esqueceuSenha(){
+        try{
+            val email = binding.editEmail.text.toString()
+
+            autenticacao.sendPasswordResetEmail(email)
+
+
+        }catch (e:Exception){
+            AlertDialog.Builder(this)
+                .setTitle("Error")
+                .setMessage("Error ao enviar email de recuperação")
+                .setPositiveButton("OK"){dialog,posicao->
+                }
+                .create().show()
+        }
     }
 
 }
